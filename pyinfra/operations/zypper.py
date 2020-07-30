@@ -184,6 +184,7 @@ def packages(
     upgrade_command = 'zypper update -y'
 
     yield ensure_packages(
+        host,
         packages,
         host.fact.rpm_packages,
         present,

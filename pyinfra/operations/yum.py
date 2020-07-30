@@ -181,7 +181,7 @@ def packages(
         extra_uninstall_args = ' ' + extra_uninstall_args
 
     yield ensure_packages(
-        packages, host.fact.rpm_packages, present,
+        host, packages, host.fact.rpm_packages, present,
         install_command='yum install -y' + nobest_option + extra_install_args,
         uninstall_command='yum remove -y' + extra_uninstall_args,
         upgrade_command='yum update -y',
